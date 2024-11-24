@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Change Section</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            border: 2px solid #000;
+            width: 600px;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .color-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 2px solid #000;
+            background-color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        .color-section p {
+            margin: 0;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-evenly;
+            padding: 10px;
+        }
+
+        .button {
+            width: 40px;
+            height: 40px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .orange {
+            background-color: orange;
+        }
+
+        .green {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="color-section" id="color-section">
+            <p>This section should change colour after clicking on following buttons</p>
+        </div>
+        <div class="buttons">
+            <button class="button blue" onclick="changeColor('blue')"></button>
+            <button class="button orange" onclick="changeColor('orange')"></button>
+            <button class="button green" onclick="changeColor('green')"></button>
+        </div>
+    </div>
+
+    <script>
+        function changeColor(color) {
+            const section = document.getElementById('color-section');
+            section.style.backgroundColor = color;
+        }
+    </script>
+</body>
+</html>
